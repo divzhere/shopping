@@ -17,13 +17,18 @@ export default function Products() {
   //   };
 
   const handleFiltering = () => {
-    let filteredCards = req.filter(function filterProducts(val) {
-      if (filterBrands.includes(val.brand)) {
-        return val;
+    if (filterBrands.length) {
+      let filteredCards = req.filter(function filterProducts(val) {
+        if (filterBrands.includes(val.brand)) {
+          return val;
+        }
+      });
+      setProducts(filteredCards);
+    } else {
+      if (req) {
+        setProducts(req);
       }
-    });
-
-    setProducts(filteredCards);
+    }
   };
   const handleBrands = (e) => {
     setChecked(!checked);
@@ -58,6 +63,11 @@ export default function Products() {
     setBrands(brandsList);
   }, []);
 
+  React.useEffect(() => {
+    if (req) {
+      handleFiltering();
+    }
+  }, [filterBrands]);
   return (
     <>
       <div className="brands_filter">
@@ -85,9 +95,11 @@ export default function Products() {
         </div> */}
       </section>
       <section className="products_container">
-        {products.map((product, i) => (
-          <Card key={i} product={product}></Card>
-        ))}
+        {products.length
+          ? products.map((product, i) => (
+              <Card key={i} product={product}></Card>
+            ))
+          : ""}
       </section>
     </>
   );

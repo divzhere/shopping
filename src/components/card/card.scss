@@ -1,0 +1,43 @@
+.product_card {
+    margin: 10px;
+
+    .product_img {
+        object-fit: cover;
+        height: auto;
+        width: 200px;
+    }
+
+    .card_body {
+        max-width: 200px;
+
+        .name {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        .price {
+            font-size: 14px;
+            font-weight: 500;
+            color: #222;
+            margin-right: 12px;
+        }
+
+        .mrp {
+            font-size: 14px;
+            font-weight: 500;
+            color: grey;
+            text-decoration: line-through;
+        }
+
+        .gender {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-radius: 4px;
+
+        }
+
+        
+    }
+}

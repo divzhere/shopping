@@ -1,0 +1,35 @@
+.products_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-right: 40px;
+    margin-top: 60px;
+    margin-left: 260px;
+}
+
+.brands_filter {
+    border-right: 1px solid grey;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    width: 256px;
+
+    h4 {
+        margin-left: 20px;
+    }
+
+    .filter_option {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        cursor: pointer;
+
+        .input_checkbox_label {
+            margin-left: 12px;
+        }
+
+    }
+
+}
